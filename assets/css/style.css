@@ -783,7 +783,7 @@ section {
 
 .about:before{
   content: "";
-  background: rgba(255, 255, 255, 0.541);
+  background: #ffffffa8;
   position: absolute;
   bottom: 0;
   top: 0;
@@ -797,19 +797,20 @@ section {
 .about .about-img {
   position: relative;
   transition: 0.5s;
+  
 }
 
 .about .about-img img {
-  max-width: 100%;
+  max-width: 170%;
   border: 4px solid rgba(255, 255, 255, 0.2);
   position: relative;
 }
 
 .about .about-img::before {
-  position: absolute;
+  position: auto;
   left: 20px;
   top: 20px;
-  width: 60px;
+  width: 1000px;
   height: 60px;
   z-index: 1;
   content: " ";
@@ -819,10 +820,10 @@ section {
 }
 
 .about .about-img::after {
-  position: absolute;
+  position: auto;
   right: 20px;
   bottom: 20px;
-  width: 60px;
+  width: 1000px;
   height: 60px;
   z-index: 2;
   content: "";
@@ -832,7 +833,7 @@ section {
 }
 
 .about .about-img:hover {
-  transform: scale(1.03);
+  transform: scale(1.2);
 }
 
 .about .about-img:hover::before {
@@ -846,8 +847,9 @@ section {
 }
 
 .about .content h3 {
-  font-weight: 600;
-  font-size: 26px;
+  font-weight: 800;
+  position: auto;
+  font-size: 30px;
 }
 
 .about .content ul {
@@ -856,20 +858,20 @@ section {
 }
 
 .about .content ul li {
-  padding-bottom: 10px;
+  padding-bottom: 30px;
 }
 
 .about .content ul i {
   font-size: 20px;
   padding-right: 4px;
-  color: #ffffff;
+  color: #000000;
 }
 
 .about .content p:last-child {
   margin-bottom: 0;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1020px) {
   .about {
     background-attachment: fixed;
   }
