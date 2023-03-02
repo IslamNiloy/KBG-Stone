@@ -1302,8 +1302,15 @@ th:last-child {
 .product-detail h3 {
   text-transform: uppercase;
   margin-bottom: 2rem;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 25px;
 }
+.product-detail h4{
+  font-family: sans-serif;
+  font-size: 15.5px;
+  
 
+}
 @media only screen and (max-width: 996px) {
   .product-detail .left {
     width: 30rem;
