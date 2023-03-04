@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+
+<!-- Product Details -->
+<section class="section product-detail">
+  <br><br> <div class="details container">
+     <div class="left image-container">
+     <br><br><br>  <div class="main">
+         <img src="{% static 'assets/img/MARBEL/04-emperador-dark.jpg' %}" id="zoom" alt="" />
+       </div>
+     </div>
+     <div class="right">
+       <span></span>
+       <br> <br><br><br>  <h1>Emperador Dark</h1>
+     
+       <h3>Product Detail</h3>
+       <h4>
+       <p>
+         Emperador Dark is a magnificent natural stone that is known for its rich, warm tones and distinctive veining. 
+         This marble is characterized by its deep brown background and bold, creamy veins that create a sense of depth and texture.
+      The veins are typically thick and irregular, giving the stone a sense of movement and character</p> 
+         <p>
+             Emperador Dark marble is a popular choice for a wide range of interior design projects, including flooring, countertops, and wall cladding. 
+             Its dark and dramatic color palette can add a touch of sophistication and luxury to any space. 
+             This marble is also highly durable and easy to maintain, making it a practical choice for high-traffic areas. 
+         </p>
+         <p>
+             Overall, Emperador Dark marble is a timeless and elegant natural stone that can add warmth and depth to any design project. 
+             Its unique veining and warm tones make it a popular choice among homeowners, architects, and designers alike,
+              particularly for those seeking a rich and luxurious look.
+       </p>
+       
+       <p>
+         <b>Application:</b> Interior design projects, including flooring, countertops, and accent walls
+       </p>
+       
+       <p>
+        <b>Material:</b> Marble Slabs 
+       </p>
+       
+       <p> <b>Size:</b>  2100x1100x20mm</p>
+     </h4>
+
+     </div>
+   </div>
+ </section>
+
+
+<!-- Custom Script -->
+<script
+  src="https://code.jquery.com/jquery-3.4.0.min.js"
+  integrity="sha384-JUMjoW8OzDJw4oFpWIB2Bu/c6768ObEthBMVSiIx4ruBIEdyNSUQAjJNFqT5pnJ6"
+  crossorigin="anonymous"
+></script>
+<script src="{% static 'assets/js/zoomsl.min.js' %}"></script>
+<script>
+  $(function () {
+    console.log("hello");
+    $("#zoom").imagezoomsl({
+      zoomrange: [4, 4],
+    });
+  });
+</script>
+{% endblock %}
+
+

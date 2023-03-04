@@ -1,0 +1,13 @@
+{% extends 'appointment.html' %}
+
+{% block content %}
+<br> <br><br> <br><br><br>
+  <h1>Success!</h1>
+  <p>{{ message }}</p>
+
+  <script>
+    $(document).ready(function() {
+      alert('{{ message }}');
+    });
+  </script>
+{% endblock %}
