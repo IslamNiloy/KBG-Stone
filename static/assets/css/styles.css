@@ -10,15 +10,15 @@
   --grey2: #e9d7d3;
   
 }
-
-/* Basic Reset */
+/*  
+/* Basic Reset
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
-}
+}  */
 
 /**.logo{
   height: 20px;
@@ -26,7 +26,7 @@
   margin-bottom: 20%;
 }*/
 
-html {
+/* html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
@@ -58,7 +58,7 @@ li {
 .d-flex {
   display: flex;
   align-items: center;
-}
+} */
 
 /* 
 =================
