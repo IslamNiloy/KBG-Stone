@@ -69,7 +69,7 @@ def appointment_form(request):
          # send confirmation email to user
         subject = 'Appointment Request Confirmation'
         message = f'Hi {name},\n\nThank you for booking an appointment. Your appointment is scheduled for {appointment_date} at {appointment_time}. We look forward to see you.\n\nBest regards,\nThe Appointment Team\nParkway Technology '
-        from_email = 'parkwaykbg@gmail.com'  # replace with your email address
+        from_email = 'niloy.islam@kbgbd.com.au'  # replace with your email address
         recipient_list =[email,]  # replace with the email address of the user who submitted the form
         send_mail(subject, message, from_email, recipient_list, fail_silently=False)
 

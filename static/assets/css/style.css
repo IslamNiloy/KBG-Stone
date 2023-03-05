@@ -133,7 +133,7 @@ h6 {
 --------------------------------------------------------------*/
 #topbar {
   height: 40px;
-  font-size: 15px;
+  font-size: 14px;
   transition: all 0.5s;
   z-index: 996;
   background-color: #000000ef;
@@ -361,10 +361,9 @@ h6 {
   color: #fff;
   font-size: 18px;
   cursor: pointer;
-  display: block;
+  display: none;
   line-height: 0;
   transition: 0.5s;
-  
 }
 
 @media (max-width: 991px) {
@@ -390,12 +389,10 @@ h6 {
 }
 
 .navbar-mobile .mobile-nav-toggle {
-  position: relative;
+  position: absolute;
   top: 15px;
   right: 15px;
-
 }
-
 
 .navbar-mobile ul {
   display: block;
@@ -965,7 +962,7 @@ section {
 .menu .menu-img {
   width: 70px;
   border-radius: 50%;
-  float: right;
+  float: left;
   border: 5px solid rgba(255, 255, 255, 0.2);
 }
 
