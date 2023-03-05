@@ -2,7 +2,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.template import loader
-from dashboard.models import Appointment
+from dashboard.models import Appointment, Popup,PopUpSubmission
 from dashboard.models import ContactForm
 from django.utils import timezone
 from django.core.mail import send_mail
@@ -48,6 +48,10 @@ def product_page7(request):
 def product_page8(request):
     return render(request,'Product_Zebrino.html')
 
+
+
+# Appointment Form
+
 def appointment_form(request):
     if request.method == 'POST':
         name = request.POST.get('name')
@@ -79,7 +83,7 @@ def appointment_form(request):
 
 
 
-
+# Contact Form
 def contact(request):
     if request.method == 'POST':
         # Get the data from the form submission
@@ -102,8 +106,49 @@ def contact(request):
         recipient_list =[email,]  # replace with the email address of the user who submitted the form
         send_mail(subject, message, from_email, recipient_list, fail_silently=False)
 
-        return render(request, 'index.html', {'message': 'Your form has been submitted successfully!'})
+        return render(request, 'success.html', {'message': 'Your form has been submitted successfully!'})
 
         
     else:
         return render(request, 'index.html')
+
+
+
+#Popup Form
+# def popup(request):
+#     if request.method == 'POST':
+#         name = request.POST.get('name')
+#         phone = request.POST.get('number')
+#         email = request.POST.get('email')
+#         post_code= request.POST.get('postcode')
+        
+#         popup_form = Popup(
+#             name=name,
+#             phone=phone,
+#             email=email,
+#             postcode=post_code,
+#         )
+#         popup_form.save()
+#         return render(request, 'success.html', {'message': 'Your form has been submitted successfully!'})
+
+#     return render(request, 'appointment.html')
+
+
+def popup(request):
+    if request.method == 'POST':
+        # Handle form submission
+        name = request.POST.get('name')
+        number = request.POST.get('number')
+        email = request.POST.get('email')
+        postcode = request.POST.get('postcode')
+
+        # Save form submission to database
+        submission = PopUpSubmission(name=name, number=number, email=email, postcode=postcode)
+        submission.save()
+
+        # Return success response
+        return HttpResponse('Form submitted successfully')
+    else:
+        # Render PopUp template
+        return render(request, 'index.html')
+

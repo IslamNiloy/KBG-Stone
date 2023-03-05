@@ -14,8 +14,8 @@ urlpatterns = [
     path('gallery',views.blog_page,name='blog'),
     path('contactus',views.contactus_page,name='contactus'),
     path('appointment',views.appointment_page,name='appointment'),
-    path('save',views.appointment_form,name='save_appointment'),
-    path('contact',views.contact,name='contact'),
+
+
     path('allproduct',views.all_product_page,name='allproduct'),
     path('Product_Calacatta_Carrara',views.product_page1,name='Product_Calacatta_Carrara'),
     path('Product_Calacatta-Oro',views.product_page2,name='Product_Calacatta-Oro'),
@@ -24,7 +24,12 @@ urlpatterns = [
     path('Product_Emperador Dark',views.product_page5,name='Product_Emperador Dark'),
     path('Product_mugla_white',views.product_page6,name='Product_mugla_white'),
     path('Product_Panda Book Match',views.product_page7,name='Product_Panda Book Match'),
-    path('Product_Zebrino',views.product_page8,name='Product_Zebrino')
+    path('Product_Zebrino',views.product_page8,name='Product_Zebrino'),
+
+    #form for get data
+    path('save',views.appointment_form,name='save_appointment'),
+    path('contact',views.contact,name='contact'),
+    path('popup',views.Popup,name='popup')
 
     
 ]

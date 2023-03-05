@@ -435,24 +435,22 @@
                   <h1>Welcome to <span>KBG STONE</span> </h1>
                   <p>Australia's Top Marble Company Which Provides A Grade Quality. Retailer Manufacturer & Wholesaler.
                   </p>
-                  <form action="#">
-                    
+                  <form method="post" action="{%url 'popup'%}" >
+                    {% csrf_token %}
                       <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-                    
-                    
+
                      <br>
-                      <input type="phone number" class="form-control" name="number" id="number" placeholder="Number" required> 
+                      <input type="text" class="form-control" name="number" id="number" placeholder="Your Number" required> 
                       <br>
                       <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" >
-                      <br> <input type="postcode" class="form-control" name="postcode" id="postcode" placeholder="Your Postcode" >
+                      <br> <input type="text" class="form-control" name="postcode" id="postcode" placeholder="Your Postcode" >
                       <br>
-                       <div class="btns">
-                        <a href="#submit" class="btn-menu animated fadeInUp scrollto">Submit</a>
-                        
-                      </div>
-                
-                
+                        <!-- <div class="btns"><a  href="" class="btn-menu animated fadeInUp scrollto">Submit</a></div>  -->
+                        <div class="btn-menu animated fadeInUp scrollto" >
+                          <button type="submit" value="submit" name="save">Submit</button>
+                        </div> 
                     </form>
+                    
                   </div>
                 </div>
             </div>

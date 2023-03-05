@@ -27,12 +27,22 @@ class ContactForm(models.Model):
 
 
 
-# class Popup(models.Model):
-#     name = models.CharField(max_length=255)
-#     number = models.CharField(max_length=20)
-#     email = models.EmailField(max_length=255, blank=True, null=True)
-#     postcode = models.CharField(max_length=10, blank=True, null=True)
+class Popup(models.Model):
+    name = models.CharField(max_length=255)
+    phone = models.CharField(max_length=20)
+    email = models.EmailField(max_length=255, blank=True, null=True)
+    postcode = models.CharField(max_length=10, blank=True, null=True)
 
-#     def __str__(self):
-#         return self.name
+    def __str__(self):
+        return self.name
 
+
+class PopUpSubmission(models.Model):
+    name = models.CharField(max_length=255)
+    number = models.CharField(max_length=20)
+    email = models.EmailField(max_length=255, blank=True)
+    postcode = models.CharField(max_length=10, blank=True)
+    timestamp = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
