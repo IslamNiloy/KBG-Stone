@@ -26,3 +26,13 @@ class ContactForm(models.Model):
         return self.name
 
 
+
+# class Popup(models.Model):
+#     name = models.CharField(max_length=255)
+#     number = models.CharField(max_length=20)
+#     email = models.EmailField(max_length=255, blank=True, null=True)
+#     postcode = models.CharField(max_length=10, blank=True, null=True)
+
+#     def __str__(self):
+#         return self.name
+

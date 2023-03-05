@@ -250,9 +250,6 @@ h6 {
 */
 .navbar {
   padding: 0;
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .navbar ul {
@@ -369,17 +366,11 @@ h6 {
   transition: 0.5s;
 }
 
-
-
-
 @media (max-width: 991px) {
-  
-    .mobile-nav-toggle {
-      position: absolute;
-      top: 25px; /* adjust this value to move the button up or down */
-      right: 50px; /* adjust this value to move the button left or right */
-    }
-    /* other styles */
+  .mobile-nav-toggle {
+    display: block;
+  }
+
   .navbar ul {
     display: none;
   }
@@ -399,8 +390,8 @@ h6 {
 
 .navbar-mobile .mobile-nav-toggle {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 15px;
+  right: 15px;
 }
 
 .navbar-mobile ul {
