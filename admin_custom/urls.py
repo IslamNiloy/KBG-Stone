@@ -29,7 +29,7 @@ urlpatterns = [
     #form for get data
     path('save',views.appointment_form,name='save_appointment'),
     path('contact',views.contact,name='contact'),
-    path('popup',views.Popup,name='popup')
-
+    path('popup',views.popup,name='popup'),
+    
     
 ]

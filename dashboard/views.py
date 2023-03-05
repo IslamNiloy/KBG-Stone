@@ -2,7 +2,7 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.template import loader
-from dashboard.models import Appointment, Popup,PopUpSubmission
+from dashboard.models import Appointment,PopUpSubmission
 from dashboard.models import ContactForm
 from django.utils import timezone
 from django.core.mail import send_mail
@@ -114,25 +114,8 @@ def contact(request):
 
 
 
-#Popup Form
-# def popup(request):
-#     if request.method == 'POST':
-#         name = request.POST.get('name')
-#         phone = request.POST.get('number')
-#         email = request.POST.get('email')
-#         post_code= request.POST.get('postcode')
-        
-#         popup_form = Popup(
-#             name=name,
-#             phone=phone,
-#             email=email,
-#             postcode=post_code,
-#         )
-#         popup_form.save()
-#         return render(request, 'success.html', {'message': 'Your form has been submitted successfully!'})
 
-#     return render(request, 'appointment.html')
-
+#popup form
 
 def popup(request):
     if request.method == 'POST':
