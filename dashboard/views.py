@@ -72,7 +72,7 @@ def appointment_form(request):
 
          # send confirmation email to user
         subject = 'Appointment Request Confirmation'
-        message = f'Hi {name},\n\nThank you for booking an appointment. Your appointment is scheduled for {appointment_date} at {appointment_time}. We look forward to see you.\n\nBest regards,\nThe Appointment Team\nParkway Technology '
+        message = f'Dear {name},\n\nThank you for booking an appointment with us! We are looking forward to meeting with you on {appointment_date} at {appointment_time}for your scheduled appointment.\n\nWe wanted to confirm the details of your appointment:\nAppointment Date:  {appointment_date}\nAppointment Time:  {appointment_time}\nDuration: 1 Hour\nLocation:Unit 6, 1003-1009 Canley Vale Road, Wetherill Park, NSW, Australia 2164\n\nPlease note that if you need to cancel or reschedule your appointment, we kindly ask that you provide us with at least 24 hours notice. This allows us to offer your appointment slot to other clients who may be on a waiting list.\nIf you have any questions or concerns regarding your appointment, please do not hesitate to contact us at [Mobile: +61 451 210 406]. We are always happy to help!\nThank you for choosing our business for your needs. We look forward to providing you with exceptional service and a great experience.\n\nBest regards,\nKBG STONE'
         from_email = 'niloy.islam@kbgbd.com.au'  # replace with your email address
         recipient_list =[email,]  # replace with the email address of the user who submitted the form
         send_mail(subject, message, from_email, recipient_list, fail_silently=False)
@@ -101,8 +101,11 @@ def contact(request):
         # Return a success message to the user
           # send confirmation email to user
         subject = 'Appointment Request Confirmation'
-        message = f'Hi {name},\n\nThank you for contacting with us. We will Contact with you soon.\n\nBest regards,\nThe Appointment Team\nParkway Technology '
-        from_email = 'parkwaykbg@gmail.com'  # replace with your email address
+        message = f'Hi {name},\n\nThank you for contacting with us.We will Contact with you soon.\n\nBest regards,\nThe Appointment Team\nParkway Technology '
+        
+
+
+        from_email = 'niloy.islam@kbgbd.com.au'  # replace with your email address
         recipient_list =[email,]  # replace with the email address of the user who submitted the form
         send_mail(subject, message, from_email, recipient_list, fail_silently=False)
 
@@ -130,8 +133,8 @@ def popup(request):
         submission.save()
 
         # Return success response
-        return HttpResponse('Form submitted successfully')
-    else:
+    #     return HttpResponse('Form submitted successfully')
+    # else:
         # Render PopUp template
         return render(request, 'index.html')
 
