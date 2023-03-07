@@ -16,6 +16,8 @@
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/> -->
 
   <!-- Vendor CSS Files -->
   <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
@@ -29,6 +31,7 @@
   <!-- Template Main CSS File -->
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
   <link href="{% static 'assets/css/styles.css' %}" rel="stylesheet">
+  <!-- <link href="{% static 'assets/css/rating.css' %}" rel="stylesheet"> -->
 </head>
 
 <body>
@@ -69,17 +72,17 @@
         <ul>
           <li><a class="nav-link {% if request.path == '/' %}active{% endif %}" href="{% url 'index' %}">HOME</a></li>
            
-          <li class="dropdown"><a href="{% url 'allproduct' %}"><span>NATURAL STONE</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="{% url 'product_list' %}"><span>NATURAL STONE</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="{% url 'allproduct' %}">All Product</a></li>
-              <li><a href="{% url 'Product_Calacatta_Carrara' %}">Calacatta-Carrara</a></li>
-              <li><a href="{% url 'Product_Crema_penta-dark' %}">Crema Penta Dark</a></li>
-              <li><a href="{% url 'Product_crema_penta_light' %}">Crema Penta Light</a></li>
-              <li><a href="{% url 'Product_Emperador Dark' %}">Emperador Dark</a></li>
-              <li><a href="{% url 'Product_Panda Book Match' %}">Panda Book Match</a></li>
-              <li><a href="{% url 'Product_Zebrino' %}">Zebrino</a></li>
-              <li><a href="{% url 'Product_mugla_white' %}">Mugla White</a></li>
-              <li><a href="{% url 'Product_Calacatta-Oro' %}">Calacatta Oro</a></li>
+              <li><a href="{% url 'product_list' %}">All Product</a></li>
+              <li><a href="{% url 'product_detail' product_id=8 %}">Calacatta-Carrara</a></li>
+              <li><a href="{% url 'product_detail' product_id=9 %}">Crema Penta Dark</a></li>
+              <li><a href="{% url 'product_detail' product_id=10 %}">Crema Penta Light</a></li>
+              <li><a href="{% url 'product_detail' product_id=11 %}">Emperador Dark</a></li>
+              <li><a href="{% url 'product_detail' product_id=12 %}">Panda Book Match</a></li>
+              <li><a href="{% url 'product_detail' product_id=14 %}">Zebrino</a></li>
+              <li><a href="{% url 'product_detail' product_id=15 %}">Mugla White</a></li>
+              <li><a href="{% url 'product_detail' product_id=16 %}">Calacatta Oro</a></li>
               
             </ul>
           </li> 
@@ -87,7 +90,7 @@
           <li><a class="nav-link" href="{% url 'blog' %}">GALLERY</a></li>
 
 
-          <!-- <li class="dropdown"><a href="{% url 'allproduct' %}"><span>ALL PRODUCT</span> <i class="bi bi-chevron-down"></i></a>
+          <!-- <li class="dropdown"><a href="{% url 'product_list' %}"><span>ALL PRODUCT</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="#">Italian Marble</a></li>
               <li class="dropdown"><a href="#"><span>Natural Marble</span></a>
@@ -166,6 +169,58 @@
               
             </ul>
           </div>
+
+
+          <!-- Rating -->
+
+
+          <!-- <div class="container">
+            <div class="post">
+              <div class="text">Thanks for rating us!</div>
+              <div class="edit">EDIT</div>
+            </div>
+            <div class="star-widget">
+              <input type="radio" name="rate" id="rate-5">
+              <label for="rate-5" class="fas fa-star"></label>
+              <input type="radio" name="rate" id="rate-4">
+              <label for="rate-4" class="fas fa-star"></label>
+              <input type="radio" name="rate" id="rate-3">
+              <label for="rate-3" class="fas fa-star"></label>
+              <input type="radio" name="rate" id="rate-2">
+              <label for="rate-2" class="fas fa-star"></label>
+              <input type="radio" name="rate" id="rate-1">
+              <label for="rate-1" class="fas fa-star"></label>
+              <form action="#">
+                <header></header>
+                <div class="textarea">
+                  <textarea cols="30" placeholder="Describe your experience.."></textarea>
+                </div>
+                <div class="btn">
+                  <button type="submit">Post</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <script>
+            const btn = document.querySelector("button");
+            const post = document.querySelector(".post");
+            const widget = document.querySelector(".star-widget");
+            const editBtn = document.querySelector(".edit");
+            btn.onclick = ()=>{
+              widget.style.display = "none";
+              post.style.display = "block";
+              editBtn.onclick = ()=>{
+                widget.style.display = "block";
+                post.style.display = "none";
+              }
+              return false;
+           }
+      </script> -->
+
+          
+
+
+
 
           <!-- <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Our Newsletter</h4>
