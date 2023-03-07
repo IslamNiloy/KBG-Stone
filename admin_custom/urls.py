@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.urls import include, path
 
-from dashboard.views import appointment_form
+from dashboard.views import appointment_form, product_detail, product_list
 from dashboard.views import contact
 from dashboard import views
 
@@ -25,6 +25,10 @@ urlpatterns = [
     path('Product_mugla_white',views.product_page6,name='Product_mugla_white'),
     path('Product_Panda Book Match',views.product_page7,name='Product_Panda Book Match'),
     path('Product_Zebrino',views.product_page8,name='Product_Zebrino'),
+    path('all-products/', views.all_products, name='all_products'),
+    
+    path('products/',views.product_list, name='product_list'),
+    path('products/<int:product_id>/', views.product_detail, name='product_detail'),
 
     #form for get data
     path('save',views.appointment_form,name='save_appointment'),

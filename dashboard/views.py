@@ -1,9 +1,8 @@
 
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse
 from django.template import loader
-from dashboard.models import Appointment,PopUpSubmission
-from dashboard.models import ContactForm
+from dashboard.models import Appointment,PopUpSubmission,ContactForm,Product
 from django.utils import timezone
 from django.core.mail import send_mail
 
@@ -137,4 +136,22 @@ def popup(request):
     # else:
         # Render PopUp template
         return render(request, 'index.html')
+    
+#All Product 
+def all_products(request):
+    products = Product.objects.all()
+    context = {
+        'products': products
+    }
+    return render(request, 'all_products.html', context)
+
+
+
+def product_list(request):
+    products = Product.objects.all()
+    return render(request, 'product_list.html', {'products': products})
+
+def product_detail(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    return render(request, 'product_detail.html', {'product': product})
 

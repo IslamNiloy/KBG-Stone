@@ -3,7 +3,7 @@ from django.utils import timezone
 
 # Create your models here.
 
-
+# Appoitment Form
 class Appointment(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -15,7 +15,7 @@ class Appointment(models.Model):
         return self.name
     
 
-
+#Contact Form
 class ContactForm(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
@@ -26,7 +26,7 @@ class ContactForm(models.Model):
         return self.name
 
 
-
+#PopUp Form
 class PopUpSubmission(models.Model):
     name = models.CharField(max_length=255)
     number = models.CharField(max_length=20)
@@ -36,3 +36,24 @@ class PopUpSubmission(models.Model):
 
     def __str__(self):
         return self.name
+    
+
+#Product Form
+class Product(models.Model):
+    name = models.CharField(max_length=255)
+    description = models.TextField()
+    image = models.ImageField(upload_to='static/images/')
+    category = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+
+# class Product(models.Model):
+#     name = models.CharField(max_length=255)
+#     description = models.TextField()
+#     image = models.ImageField(upload_to='products', blank=True, null=True)
+#     price = models.DecimalField(max_digits=10, decimal_places=2)
+
+#     def __str__(self):
+#         return self.name

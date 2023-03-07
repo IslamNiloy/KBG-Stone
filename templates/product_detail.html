@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<!-- <h1>{{ product.name }}</h1>
+{% if product.image %}
+    <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+{% endif %}
+<p>CATEGORY: {{ product.category}}</p>
+<p>{{ product.description }}</p> -->
+
+
+
+
+
+<!-- Product Details -->
+<section class="section product-detail">
+    <br><br> <div class="details container">
+       <div class="left image-container">
+       <br><br><br>  <div class="main">
+        {% if product.image %}
+            <img src="{{ product.image.url }}" id="zoom" alt="{{ product.name }}" />
+        {% endif %}
+           
+         </div>
+       </div>
+       <div class="right">
+         <span></span>
+         <br>   <h1>{{ product.name }}</h1>
+       
+         <h3>Product Detail</h3>
+         <p>CATEGORY: {{ product.category}}</p>
+         <h4>
+         <p>
+            {{ product.description }}
+         </p>
+       </h4>
+  
+       </div>
+     </div>
+   </section>
+  
+  <!-- Custom Script -->
+  <script
+    src="https://code.jquery.com/jquery-3.4.0.min.js"
+    integrity="sha384-JUMjoW8OzDJw4oFpWIB2Bu/c6768ObEthBMVSiIx4ruBIEdyNSUQAjJNFqT5pnJ6"
+    crossorigin="anonymous"
+  ></script>
+  <script src="{% static 'assets/js/zoomsl.min.js' %}"></script>
+  <script>
+    $(function () {
+      console.log("hello");
+      $("#zoom").imagezoomsl({
+        zoomrange: [4, 4],
+      });
+    });
+  </script>
+
+{% endblock %}

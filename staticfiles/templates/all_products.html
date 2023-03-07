@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% load static %}
+<section class="section all-products" id="products">
+  <div class="top container">
+    <h1> <br> <br> <br> All Products <br><br> <br></h1> 
+  </div>
+  <div class="product-center container">
+    {% for product in products %}
+      <div class="product-item">
+        <div class="overlay">
+          <a href="" class="product-thumb">
+            <img src="{% static 'assets/img/testimonials/panda-white-marble_Scaizp5.jpg' %}" alt="{{ product.name }}" />
+
+          </a>
+        </div>
+        <div class="product-info">
+          <span>{{ product.category }}</span>
+          <a href="">{{ product.name }}</a>
+          <h4>{{ product.description }}</h4>
+        </div>
+        <ul class="icons">
+          <li><a href="" class="bx bx-search"></a></li>
+        </ul>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}
